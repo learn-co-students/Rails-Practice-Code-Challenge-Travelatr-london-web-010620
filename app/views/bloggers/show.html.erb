@@ -1,0 +1,17 @@
+<h1>Name: <%= @blogger.name %></h1>
+<h2>Age: <%= @blogger.age %></h2>
+<h3>Bio: <%= @blogger.bio %></h3>
+
+<h3> Total Likes: <%= @blogger.blogger_likes %></h3>
+
+<h2> Bloggers most liked post: </h2>
+<%= link_to @blogger.featured_most_liked_post.title, post_path(@blogger.featured_most_liked_post) %><br>
+
+
+
+<h2> Bloggers most written about Destinations</h2>
+<ul>
+<% @blogger.most_written_destinations(5).each do |destination| %>
+<li><%= destination.name %><li>
+<%end%> 
+</ul>
